@@ -1,0 +1,24 @@
+domain_name: "cisco.com"
+ntp_servers:
+  - ntp.esl.cisco.com
+
+# node addresses
+build_node_name: node01.cisco.com
+controller_internal_address: "10.0.0.4"
+controller_public_address: "10.0.0.4"
+controller_admin_address: "10.0.0.4"
+swift_internal_address: "10.0.0.4"
+swift_public_address: "10.0.0.4"
+swift_admin_address: "10.0.0.4"
+
+# physical interface definitions
+external_interface: eth5
+public_interface: eth4
+private_interface: eth4
+
+internal_ip: "%{ipaddress}"
+swift_local_net_ip: "%{ipaddress}"
+nova::compute::vncserver_proxyclient_address: "0.0.0.0"
+
+quantum::agents::ovs::local_ip: "%{ipaddress}"
+neutron::agents::ovs::local_ip: "%{ipaddress}"

@@ -1,0 +1,83 @@
+# For proxy service if necessary.
+#proxy: 'http://proxy-server.domain.com:8080'
+
+# Disk partitioning options.
+root_part_size: 65536
+var_part_size: 432000
+enable_var: true
+enable_vol_space: true
+
+domain_name: domain.name
+ntp_servers:
+  - time-server.domain.name
+
+# node addresses
+build_node_name: build-server
+controller_internal_address: 192.168.242.10
+controller_public_address: 192.168.242.10
+controller_admin_address: 192.168.242.10
+swift_internal_address: 192.168.242.41
+swift_public_address: 192.168.242.41
+swift_admin_address: 192.168.242.41
+
+# this is not done yet
+internal_ip: "%{ipaddress_eth3}"
+# interfaces
+# TODO are all of these even used?
+external_interface: eth2
+public_interface: eth1
+private_interface: eth1
+
+nova::compute::vncserver_proxyclient_address: "%{ipaddress_eth3}"
+
+# user data for individual passwords
+cinder_db_password: cinder_pass
+glance_db_password: glance_pass
+keystone_db_password: key_pass
+nova_db_password: nova_pass
+network_db_password:   quantum_pass
+database_root_password: mysql_pass
+cinder_service_password: cinder_pass
+glance_service_password: glance_pass
+nova_service_password: nova_pass
+ceilometer_service_password: ceilometer_pass
+admin_password: Cisco123
+admin_token: keystone_admin_token
+network_service_password: quantum_pass
+rpc_password: openstack_rabbit_password
+metadata_shared_secret: metadata_shared_secret
+horizon_secret_key: horizon_secret_key
+ceilometer_metering_secret: ceilometer_metering_secret
+ceilometer_db_password: ceilometer
+heat_db_password: heat
+heat_service_password: heat_pass
+# for single password config
+secret_key: secret
+password: password123
+
+# swift config
+swift_local_net_ip: "%{ipaddress_eth3}"
+swift_service_password: swift_pass
+swift_hash: super_secret_swift_hash
+glance::backend::swift::swift_store_key: secret_key
+glance::backend::swift::swift_store_auth_address: '127.0.0.1'
+
+# ceph config
+ceph_cluster_name: 'ceph'
+ceph_monitor_fsid: 'e80afa94-a64c-486c-9e34-d55e85f26406'
+ceph_monitor_secret: 'AQAJzNxR+PNRIRAA7yUp9hJJdWZ3PVz242Xjiw=='
+cinder_rbd_user: 'admin'
+cinder_rbd_pool: 'volumes'
+glance_ceph_pool: 'images'
+cinder_rbd_secret_uuid: 'e80afa94-a64c-486c-9e34-d55e85f26406'
+mon_initial_members: 'ceph-mon01' #be sure to use the short hostname eg. hostname -s
+ceph_primary_mon: 'ceph-mon01' #be sure to use the short hostname eg. hostname -s
+ceph_monitor_address: '10.0.0.1'
+ceph_deploy_user: 'cephdeploy'
+ceph_deploy_password: '9jfd29k9kd9'
+ceph_cluster_interface: 'eth1'
+ceph_cluster_network: '10.0.0.0/24'
+ceph_public_interface: 'eth1'
+ceph_public_network: '10.0.0.0/24'
+
+
