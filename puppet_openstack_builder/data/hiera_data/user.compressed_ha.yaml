@@ -11,14 +11,14 @@ domain_name: domain.name
 coe::base::controller_hostname: node01
 
 # These are controller VIPs
-controller_internal_address: 10.0.0.2
-controller_public_address: 10.0.0.2
-controller_admin_address: 10.0.0.2
+controller_internal_address: 10.0.0.1
+controller_public_address: 10.0.0.1
+controller_admin_address: 10.0.0.1
 
 # these are swift proxy VIPs
-swift_internal_address: 10.0.0.3
-swift_public_address: 10.0.0.3
-swift_admin_address: 10.0.0.3
+swift_internal_address: 10.0.0.1
+swift_public_address: 10.0.0.1
+swift_admin_address: 10.0.0.1
 
 # maps to ovs local_ip from the gre data mappings
 internal_ip: "%{ipaddress_eth5}"
@@ -27,10 +27,10 @@ public_interface: eth4
 private_interface: eth4
 
 # Swift networking parameters
-swift_storage_interface: eth3.222
+swift_storage_interface: eth4.222
 swift_storage_netmask: 255.255.255.0
-swift_proxy_net_ip: "%{ipaddress_eth3}"
-swift_local_net_ip: "%{ipaddress_eth3_222}"
+swift_proxy_net_ip: "%{ipaddress_eth4}"
+swift_local_net_ip: "%{ipaddress_eth4_222}"
 
 nova::compute::vncserver_proxyclient_address: "%{ipaddress_eth4}"
 
@@ -70,7 +70,7 @@ controller_names:
   - node02
   - node03
 openstack-ha::load-balancer::controller_ipaddresses:
-  - 10.0.0.4
+  - 10.0.0.1
   - 192.168.255.195
   - 192.168.255.197
 openstack-ha::load-balancer::swift_proxy_names:
@@ -78,22 +78,22 @@ openstack-ha::load-balancer::swift_proxy_names:
   - node02
   - node03
 openstack-ha::load-balancer::swift_proxy_ipaddresses:
-  - 10.0.0.4
+  - 10.0.0.1
   - 192.168.255.195
   - 192.168.255.197
 nova::memcached_servers:
-  - 10.0.0.4:11211
+  - 10.0.0.1:11211
   - 192.168.255.195:11211
   - 192.168.255.197:11211
 openstack::swift::proxy::swift_memcache_servers:
-  - 10.0.0.4:11211
+  - 10.0.0.1:11211
   - 192.168.255.195:11211
   - 192.168.255.197:11211
 rabbit_hosts:
   - node01:5672
   - node02:5672
   - node03:5672
-bind_address: "%{ipaddress_eth1}"
+bind_address: "%{ipaddress_eth0}"
 
 cinder::volume::iscsi::iscsi_ip_address: "%{ipaddress_eth4}"
 
