@@ -71,24 +71,24 @@ controller_names:
   - node03
 openstack-ha::load-balancer::controller_ipaddresses:
   - 10.0.0.2
-  - 192.168.255.195
-  - 192.168.255.197
+  - 10.0.0.20
+  - 10.0.0.30
 openstack-ha::load-balancer::swift_proxy_names:
   - node01
   - node02
   - node03
 openstack-ha::load-balancer::swift_proxy_ipaddresses:
   - 10.0.0.2
-  - 192.168.255.195
-  - 192.168.255.197
+  - 10.0.0.20
+  - 10.0.0.30
 nova::memcached_servers:
   - 10.0.0.2:11211
-  - 192.168.255.195:11211
-  - 192.168.255.197:11211
+  - 10.0.0.20:11211
+  - 10.0.0.30:11211
 openstack::swift::proxy::swift_memcache_servers:
   - 10.0.0.2:11211
-  - 192.168.255.195:11211
-  - 192.168.255.197:11211
+  - 10.0.0.20:11211
+  - 10.0.0.30:11211
 rabbit_hosts:
   - node01:5672
   - node02:5672
