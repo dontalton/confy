@@ -3,3 +3,7 @@ cephdeploy::osdwrapper::disks:
   - sdb
   - sdc
 galera::server::master_ip: false
+
+cephdeploy::has_compute: true
+cephdeploy::osd::setup_pools: true
+

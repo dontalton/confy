@@ -26,6 +26,6 @@ swift-storage03: swift_storage
 
 #compressed_ha
 
-node01: compressed_ha
-node02: compressed_ha
-node03: compressed_ha
+node01: compressed_ha_cephall
+node02: compressed_ha_cephall
+node03: compressed_ha_cephall

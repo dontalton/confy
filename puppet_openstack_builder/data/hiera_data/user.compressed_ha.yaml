@@ -16,21 +16,21 @@ controller_public_address: 10.0.0.1
 controller_admin_address: 10.0.0.1
 
 # these are swift proxy VIPs
-swift_internal_address: "%{ipaddress_eth1_222}"
-swift_public_address: "%{ipaddress_eth1_222}"
-swift_admin_address: "%{ipaddress_eth1_222}"
+swift_internal_address: "%{ipaddress_eth1}"
+swift_public_address: "%{ipaddress_eth1}"
+swift_admin_address: "%{ipaddress_eth1}"
 
 # maps to ovs local_ip from the gre data mappings
 internal_ip: "%{ipaddress_eth2}"
-external_interface: eth4
+external_interface: eth5
 public_interface: eth2
 private_interface: eth2
 
 # Swift networking parameters
-swift_storage_interface: "%{ipaddress_eth1_222}"
+swift_storage_interface: "%{ipaddress_eth1}"
 swift_storage_netmask: 255.255.255.0
 swift_proxy_net_ip: "%{ipaddress_eth1}"
-swift_local_net_ip: "%{ipaddress_eth1_222}"
+swift_local_net_ip: "%{ipaddress_eth1}"
 
 nova::compute::vncserver_proxyclient_address: "%{ipaddress_eth1}"
 
@@ -65,6 +65,7 @@ rabbitmq::server::node_ip_address: "%{ipaddress_eth2}"
 #
 # HA connections
 #
+openstack-ha::load-balancer::swift_enabled: false
 controller_names:
   - node01
   - node02
@@ -107,3 +108,4 @@ openstack::swift::storage-node::storage_devices:
   - 'sdd'
   - 'sde'
   - 'sdf'
+cinder::volume::rbd::rbd_secret_uuid: 'e80afa94-a64c-486c-9e34-d55e85f26406'
