@@ -56,11 +56,11 @@ if ${master}; then
   export build_server="${build_server:-`hostname`}"
   # We need to know the IP address as well, so either tell me
   # or I will assume it's the address associated with eth0
-  export default_interface="${default_interface:-eth1}"
+  export default_interface="${default_interface:-eth2}"
   # So let's grab that address
   export build_server_ip="${build_server_ip:-`ip addr show ${default_interface} | grep 'inet ' | tr '/' ' ' | awk -F' ' '{print $2}'`}"
   # Our default mode also assumes at least one other interface for OpenStack network
-  export external_interface="${external_interface:-eth4}"
+  export external_interface="${external_interface:-eth3}"
 
   # For good puppet hygene, we'll want NTP setup.  Let's borrow one from Cisco
   export ntp_server="${ntp_server:-ntp.esl.cisco.com}"

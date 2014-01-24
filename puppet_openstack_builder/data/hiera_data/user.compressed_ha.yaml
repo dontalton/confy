@@ -22,7 +22,7 @@ swift_admin_address: "%{ipaddress_eth1}"
 
 # maps to ovs local_ip from the gre data mappings
 internal_ip: "%{ipaddress_eth2}"
-external_interface: eth5
+external_interface: eth3
 public_interface: eth2
 private_interface: eth2
 
@@ -108,4 +108,3 @@ openstack::swift::storage-node::storage_devices:
   - 'sdd'
   - 'sde'
   - 'sdf'
-cinder::volume::rbd::rbd_secret_uuid: 'e80afa94-a64c-486c-9e34-d55e85f26406'

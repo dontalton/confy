@@ -71,8 +71,8 @@ cinder_rbd_pool: 'volumes'
 glance_ceph_pool: 'images'
 #cinder_rbd_secret_uuid: 'e80afa94-a64c-486c-9e34-d55e85f26406'
 cinder::volume::rbd::rbd_secret_uuid: 'e80afa94-a64c-486c-9e34-d55e85f26406'
-mon_initial_members: 'node01' #be sure to use the short hostname eg. hostname -s
-ceph_primary_mon: 'node01' #be sure to use the short hostname eg. hostname -s
+mon_initial_members: 'ceph' #be sure to use the short hostname eg. hostname -s
+ceph_primary_mon: 'ceph' #be sure to use the short hostname eg. hostname -s
 ceph_monitor_address: '10.0.0.1'
 ceph_deploy_user: 'cephdeploy'
 ceph_deploy_password: '9jfd29k9kd9'
